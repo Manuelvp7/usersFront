@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>USUARIOS</h2>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col"><i class="fa fa-sort" (click)="sort()"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.username}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-angle-double-left fa-2x" (click)="backward()"></i></td>
+                <td colspan="2">
+                    <span *ngFor="let p of totalPages; let i = index">
+                    <a style="cursor: pointer;" (click)="setPage(i)"
+                    
+                    >{{i+1}}&nbsp;&nbsp;&nbsp;</a>
+                    </span>
+
+                </td>
+                <td><i class="fa fa-angle-double-right fa-2x" (click)="forward()"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
